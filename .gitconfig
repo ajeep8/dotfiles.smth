@@ -1,3 +1,6 @@
+[user]
+        email = "you@smth.org"
+        name = "Name"
 [core]
 	editor = vim
 	quotepath = false
