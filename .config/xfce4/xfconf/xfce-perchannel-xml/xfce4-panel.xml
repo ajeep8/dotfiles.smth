@@ -116,6 +116,7 @@
         <value type="string" value="Fcitx"/>
       </property>
       <property name="known-legacy-items" type="array">
+	<value type="string" value="yad"/>
         <value type="string" value="以太网连接“wired connection 1”已激活"/>
         <value type="string" value="任务管理器"/>
         <value type="string" value="网络管理器小程序"/>
