@@ -6,7 +6,7 @@ Shift-Win-q: Quit关闭窗口  Shift-Win-e: Exit登出
 Ctrl-空格: 切换输入法      Shift: 切换中英文
 
 Win-数字: 切换工作区
-Shirt-Win-数字:       将窗口移动到工作区
+Shift-Win-数字:       将窗口移动到工作区
 Shift-Win-小键盘数字：将窗口移动到对应方位
 
     Win-Alt    运行某个程序

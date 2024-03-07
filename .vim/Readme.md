@@ -1,4 +1,7 @@
+in vim run: :PlugInstall
+
 https://github.com/iamcco/markdown-preview.nvim.git
+# need npm & yarn installed firest
 
 其他常用vim插件
 https://github.com/fatih/vim-go.git

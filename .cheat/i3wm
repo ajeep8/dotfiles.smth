@@ -9,7 +9,7 @@ Ctrl-空格: 切换输入法      Shift: 切换中英文
 Win-r: Resize, 然后用方向键调整窗口大小，Enter结束
 Win-v: Vertical垂直切分    Win-n: Horizon水平切分(h已占)
 Win-方向: 切换窗口         Shift-Win-方向: 移动窗口
-Win-数字: 切换工作区       Shirt-Win-数字: 将窗口移动到工作区
+Win-数字: 切换工作区       Shift-Win-数字: 将窗口移动到工作区
 
 Win-f: 全屏                Win-s/w/t：堆叠/tabbed/tiled
 Win-m: 浮动模式
