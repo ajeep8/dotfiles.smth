@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/ajeep/mygit/live-manual/manual/po/ja'
+let g:netrw_dirhist_1='/home/ajeep/mygit/live-manual/manual/po'
+let g:netrw_dirhist_0='/home/ajeep/mygit/live-manual/manual'
+let g:netrw_dirhist_9='/home/ajeep/mygit/live-manual/manual/po/ja'
+let g:netrw_dirhist_8='/home/ajeep/mygit/github/arya/src/assets/styles/element'
+let g:netrw_dirhist_7='/home/ajeep/Downloads/20211020'
+let g:netrw_dirhist_6='/home/ajeep/mygit/github'
+let g:netrw_dirhist_5='/home/ajeep/git/snapdrop/docker'
+let g:netrw_dirhist_4='/home/ajeep/mygit/github/plantuml-svr_cn'
+let g:netrw_dirhist_3='/home/ajeep/mygit/github/pandoc-crossref/.github/workflows'

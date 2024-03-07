@@ -1,0 +1,54 @@
+title: ""
+subtitle: ""
+author: ""
+date: ""
+header-right: ""
+
+editor_options:
+  markdown:
+    wrap: 72
+output:
+  pdf_document:
+    keep_md: true
+    keep_tex: true
+    latex_engine: xelatex
+    template: /.pandoc/templates/eisvogel.tex
+    includes:
+      in_header: /.pandoc/templates/headings.tex
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    pandoc_args: ["--listings", "--extract-media", "/tmp", "--filter=pandoc-plantuml"]
+  word_document:
+    toc: yes
+    fig_caption: yes
+    reference_docx: /.pandoc/reference.docx
+    keep_md: true
+    pandoc_args: ["--filter=pandoc-plantuml"]
+  html_document:
+    keep_md: true
+    df_print: paged
+    pandoc_args: ["--filter=pandoc-plantuml"]
+
+toc-title: "目录"
+toc-own-page: yes
+fontsize: 12pt
+
+titlepage: yes
+titlepage-text-color: '000000'
+titlepage-rule-color: '360049'
+titlepage-rule-height: 0
+titlepage-background: /.pandoc/templates/background3.pdf
+CJKmainfont: SourceHanSerifCN-Medium
+
+figureTitle: "图"
+tableTitle: "表"
+figPrefix: "图"
+eqnPrefix: "公式"
+tblPrefix: "表"
+
+listings-disable-line-numbers: yes
+top-level-division: part
+code-block-font-size: \footnotesize
+

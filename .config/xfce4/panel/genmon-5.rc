@@ -1,0 +1,6 @@
+Command=curl --noproxy '*' v4.ident.me
+UseLabel=0
+Text=(ExIP)
+UpdatePeriod=30000
+Font=Noto Serif CJK SC 10
+

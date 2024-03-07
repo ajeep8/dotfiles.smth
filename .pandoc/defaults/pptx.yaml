@@ -1,0 +1,19 @@
+# verbosity: INFO
+reference-doc: ${.}/reference.pptx
+
+extract-media: /tmp
+
+filters:
+  - pandoc-csv2table
+  - pandocOne/include-code-files.lua
+  - pandocOne/diagram-generator.lua
+    # - mermaid-filter
+
+highlight-style: tango
+# highlight-style: pygments
+
+listings: true
+metadata:
+  listings: true
+  listings-disable-line-numbers: true
+

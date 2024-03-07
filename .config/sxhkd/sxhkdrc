@@ -1,0 +1,168 @@
+#
+# wm independent hotkeys
+#
+#
+# Terminal
+super + Return
+	i3-sensible-terminal
+
+# program launcher
+super + d
+	dmenu_run -fn "Noto Mono Regular-9"
+
+# Screen lock
+super + alt + l
+	i3lock -t -i /usr/share/backgrounds/smth/th-3989x1080.svg
+
+# Programs
+super + alt + b
+	exo-open --launch WebBrowser
+super + alt + f
+	firefox
+super + alt + h
+	thunar
+super + alt + m
+	typora
+super + alt + n
+	nm-connection-editor
+super + alt + a
+	arandr
+super + alt + s
+	xfce4-settings-manager
+
+#
+# bspwm hotkeys
+#
+
+# make sxhkd reload its configuration files:
+super + shift + c
+	pkill -USR1 -x sxhkd
+
+# quit/restart bspwm
+super + shift + r
+	bspc wm -r
+super + ctrl + alt + e
+	bspc quit
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{k,c}
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+#
+# state/flags
+
+# alternate between the tiled and monocle layout
+super + f
+	bspc desktop -l next
+# set the window state
+super + {t,shift + t,m,shift + f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+#super + bracket{left,right}
+#	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + shift {1-9,0}
+	bspc node -d '^{1-9,10}'
+super + 1
+	bspc desktop -f '^1'; feh --bg-fill --no-fehbg --geometry +100+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 2
+	bspc desktop -f '^2'; feh --bg-fill --no-fehbg --geometry +300+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 3
+	bspc desktop -f '^3'; feh --bg-fill --no-fehbg --geometry +500+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 4
+	bspc desktop -f '^4'; feh --bg-fill --no-fehbg --geometry +700+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 5
+	bspc desktop -f '^5'; feh --bg-fill --no-fehbg --geometry +900+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 6
+	bspc desktop -f '^6'; feh --bg-fill --no-fehbg --geometry +1100+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 7
+	bspc desktop -f '^7'; feh --bg-fill --no-fehbg --geometry +1300+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 8
+	bspc desktop -f '^8'; feh --bg-fill --no-fehbg --geometry +1500+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 9 
+	bspc desktop -f '^9'; feh --bg-fill --no-fehbg --geometry +1700+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+super + 0
+	bspc desktop -f '^10'; feh --bg-fill --no-fehbg --geometry +1900+0 /usr/share/backgrounds/smth/th-3989x1080.svg
+
+#
+# move/resize
+#
+
+
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+#
+# preselect
+#
+
+# preselect the direction
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + alt + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + alt + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# Media keys
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +10%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -10%
+XF86AudioMute
+	pactl set-sink-mute 0 toggle

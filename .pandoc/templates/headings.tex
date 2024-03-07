@@ -1,0 +1,26 @@
+\AtBeginDocument{%
+\addto\captionsenglish{\renewcommand{\figurename}{$figureTitle$}}
+\addto\captionsenglish{\renewcommand{\tablename}{$tableTitle$}}
+\addto\captionsenglish{\renewcommand{\lstlistingname}{$listingTitle$}}
+\addto\captionsenglish{\renewcommand{\listfigurename}{$lofTitle$}}
+\addto\captionsenglish{\renewcommand{\listtablename}{$lotTitle$}}
+}
+
+\usepackage{sectsty}
+\newfontfamily\sfnsdisplaybold{SourceHanSerifCN-Heavy}
+\partfont{\fontsize{36pt}{36pt}\selectfont\sfnsdisplaybold}
+\chapterfont{\fontsize{26pt}{26pt}\selectfont\sfnsdisplaybold}
+\sectionfont{\fontsize{24pt}{24pt}\selectfont\sfnsdisplaybold}
+\subsectionfont{\fontsize{22pt}{22pt}\selectfont\sfnsdisplaybold}
+\subsubsectionfont{\fontsize{18pt}{18pt}\selectfont\sfnsdisplaybold}
+\paragraphfont{\fontsize{16pt}{16pt}\selectfont\sfnsdisplaybold}
+\subparagraphfont{\fontsize{15pt}{15pt}\selectfont\sfnsdisplaybold}
+\minisecfont{\fontsize{14pt}{14pt}\selectfont\sfnsdisplaybold}
+
+\usepackage{titlesec}
+\titleformat{\paragraph}[hang]{\fontsize{16pt}{16pt}\selectfont\sfnsdisplaybold}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+\titleformat{\subparagraph}[hang]{\fontsize{15pt}{15pt}\selectfont\sfnsdisplaybold}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+
+\usepackage{awesomebox}

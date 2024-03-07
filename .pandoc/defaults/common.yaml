@@ -1,0 +1,39 @@
+date: \today
+
+toc-title: "目录"
+geometry: a4paper
+fontsize: 14pt
+CJKmainfont: NotoSerifCJKsc-Regular
+  #mainfont: "SimSun"  # in windows, must use this line
+colorlinks: true
+
+# Rmarkdown Config # GnuWin32 sed cannot use Chinese in remark line
+editor_options:
+  markdown:
+    wrap: 72
+output:
+  pdf_document:
+    fig_caption: yes
+    number_sections: yes
+  word_document:
+    toc: yes
+    fig_caption: yes
+    keep_md: true
+  html_document:
+    keep_md: true
+    df_print: paged
+
+# eisvogel Template config
+titlepage: yes
+titlepage-text-color: '000000'
+titlepage-rule-color: '360049'
+titlepage-rule-height: 0
+titlepage-background: /.pandoc/templates/background3.pdf
+toc-own-page: yes
+
+# Parameter of include-files of lua-filters: auto shift-heading-level-by
+include-auto: yes
+
+# Others
+code-block-font-size: \footnotesize
+#top-level-division: chapter

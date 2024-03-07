@@ -1,0 +1,43 @@
+# verbosity: INFO
+
+toc: true
+toc-depth: 3
+# number-sections: true # In docx, this conflict with docx template section auto-number
+extract-media: /tmp
+
+filters:
+  - pandocOne/include-files.lua
+  - pandocOne/include-code-files.lua
+  - pandoc-csv2table
+  - pandocOne/meta-vars.lua
+  - pandocOne/diagram-generator.lua
+  - lua-filters/pagebreak.lua
+    #  - mermaid-filter
+    #- lua-filters/latex-div.lua
+  - pandoc-crossref
+    #- panda.lua
+
+highlight-style: tango
+# highlight-style: pygments
+
+metadata:
+  # pandoc-crossref config
+  stylesheet: ${.}/epub.css
+  codeBlockCaptions: True
+
+  figureTitle: "图-"
+  tableTitle: "表-"
+  listingTitle: "代码-"
+  figPrefix: "图-"
+  tblPrefix: "表-"
+  lstPrefix: "代码-"
+
+  eqnPrefix: "公式-"
+  secPrefix: "章节-"
+
+  lofTitle: "图片目录"
+  lotTitle: "表格目录"
+  lolTitle: "代码目录"
+
+metadata-files:
+  - ${.}/common.yaml

@@ -1,0 +1,9 @@
+[core]
+	editor = vim
+	quotepath = false
+[diff]
+	tool = vimdiff
+[alias]
+	d = difftool
+[difftool]
+	prompt = false
