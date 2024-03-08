@@ -4,7 +4,7 @@
 #
 # Terminal
 super + Return
-	i3-sensible-terminal
+	xfce4-terminal
 
 # program launcher
 super + d
