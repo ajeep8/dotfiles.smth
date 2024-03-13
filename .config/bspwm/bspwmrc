@@ -13,6 +13,8 @@ bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc rule -a Wrapper-2.0 monitor=primary follow=on state=floating border=off rectangle=400x650+0+0
+bspc rule -a xfce4-panel,mpv state=floating
 bspc rule -a Skypeforlinux desktop='^9' follow=on
 bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a wpp desktop='^7' follow=on
@@ -23,7 +25,8 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 kill -9 $(pidof appmenu-registrar)
-#xrandr -s 1280x960
+# xrandr -s 1280x960
+# xrandr -s `xrandr | awk '/\+/ {print $1}' | grep -P '\d+x\d+'`
 feh --bg-fill --no-fehbg --geometry +100+0 /usr/share/backgrounds/smth/th-3989x1080.svg
 numlockx off
 WM=`neofetch wm|cut -b 5-`
@@ -33,3 +36,4 @@ picom
 pgrep -x conky > /dev/null || conky --daemonize --pause=1 &
 
 # https://gist.github.com/CSaratakij/9b9430a3694d3af56642b040e4b03dd6
+
