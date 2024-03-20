@@ -1,7 +1,8 @@
 # 字体设置
 font:
   normal:
-    family: Ubuntu Mono
+    family: Noto Mono
+      #family: Noto Sans Mono
     style: Regular
   size: 10
 
