@@ -117,18 +117,18 @@ export WM=`neofetch wm|cut -b 5-`
 if [ -z $WM ]; then
   echo
 elif [ $WM = 'i3' ]; then
-  cat ~/.cheat/i3wm
+  cat ~/.config/cheat/i3wm
 elif [ $WM = 'Xfwm4' ]; then
-  cat ~/.cheat/xfce4
+  cat ~/.config/cheat/xfce4
 elif [ $WM = 'bspwm' ]; then
-  cat ~/.cheat/bspwm
+  cat ~/.config/cheat/bspwm
 fi
 
 set -o ignoreeof
 
-export drawio_url=http://192.168.100.199:8166
-export mermaid_url=http://192.168.100.199:8170
-export plantuml_url=http://192.168.100.199:8180
-export py2img_url=http://192.168.100.199:8190
+export drawio_url=http://192.168.1.28:8166
+export mermaid_url=http://192.168.1.28:8170
+export plantuml_url=http://192.168.1.28:8180
+export py2img_url=http://192.168.1.28:8190
 
 export PATH=$PATH:/sbin:/usr/sbin
