@@ -1,0 +1,25 @@
+# 字体设置
+font:
+  normal:
+    family: Ubuntu Mono
+    style: Regular
+  size: 10
+
+# 颜色设置
+colors:
+  primary:
+    background: '0x1e2127'
+    foreground: '0xd7d7d7'
+
+# 窗口大小
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+  opacity: 0.9  # 设置透明度，值在 0（完全透明）和 1（完全不透明）之间
+
+# 快捷键设置
+key_bindings:
+  - { key: F11, mods: Control, action: ToggleFullscreen }
+
+
