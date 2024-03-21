@@ -7,3 +7,6 @@
 	d = difftool
 [difftool]
 	prompt = false
+[user]
+	name = Ajeep
+	email = ajeep8@gmail.com

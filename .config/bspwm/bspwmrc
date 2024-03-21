@@ -31,6 +31,6 @@ WM=`neofetch wm|cut -b 5-`
 [ "$WM" != "Xfwm4" ] && ~/.config/polybar/launch.sh
 pgrep -x ulauncher > /dev/null || /usr/bin/ulauncher --hide-window &
 picom
-pgrep -x conky > /dev/null || conky --daemonize --pause=1 &
+#pgrep -x conky > /dev/null || conky --daemonize --pause=1 &
 
 # https://gist.github.com/CSaratakij/9b9430a3694d3af56642b040e4b03dd6
