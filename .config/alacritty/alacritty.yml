@@ -1,8 +1,7 @@
 # 字体设置
 font:
   normal:
-    family: Noto Mono
-      #family: Noto Sans Mono
+    family: Noto Sans Mono CJK SC
     style: Regular
   size: 10
 
