@@ -1,3 +1,8 @@
+# 自动刷新
+#live_config_reload: true
+# Tab 缩进
+#tabspaces: 4
+
 # 字体设置
 font:
   normal:
@@ -18,8 +23,25 @@ window:
     lines: 24
   opacity: 0.9  # 设置透明度，值在 0（完全透明）和 1（完全不透明）之间
 
+#blur-kern = "3x3box"
+#blur-background-exclude = [ "window_type = 'dock'" ]
+
+#blur-method = "none"
+#blur-strength = 0
+
 # 快捷键设置
 key_bindings:
   - { key: F11, mods: Control, action: ToggleFullscreen }
 
+scrolling:
+    # 历史保留行数
+    history: 2000
 
+    # 每次滚动行数
+    multiplier: 20
+      
+    # 每次滚动行数（分屏时）
+    faux_multiplier: 100
+
+    # 自动滚动至最新行
+    auto_scroll: true
