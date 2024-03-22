@@ -4,7 +4,7 @@
 #
 # Terminal
 super + Return
-	xfce4-terminal
+	exo-open --launch TerminalEmulator
 
 # program launcher
 super + d
@@ -20,7 +20,7 @@ super + alt + b
 super + alt + f
 	firefox
 super + alt + h
-	thunar
+	exo-open --launch FileManager
 super + alt + m
 	typora
 super + alt + n
