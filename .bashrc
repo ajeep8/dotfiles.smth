@@ -113,6 +113,7 @@ if ! shopt -oq posix; then
 fi
 
 export WM=`neofetch wm|cut -b 5-`
+export DE=`neofetch de|cut -b 5-8`
 
 if [ -z $WM ]; then
   echo
@@ -121,7 +122,11 @@ elif [ $WM = 'i3' ]; then
 elif [ $WM = 'Xfwm4' ]; then
   cat ~/.config/cheat/xfce4
 elif [ $WM = 'bspwm' ]; then
-  cat ~/.config/cheat/bspwm
+  if [ -z $DE ]; then
+    cat ~/.config/cheat/bspwm
+  else
+    sed 's/Win-Ctrl-Alt-e/Shift-Win-e/' ~/.config/cheat/bspwm
+  fi
 fi
 
 set -o ignoreeof
