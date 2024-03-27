@@ -157,9 +157,9 @@ local function drawio(code, filetype)
   f:close()
 
   if filetype == 'png' then
-    cmd = 'curl -s -d @' .. tmpfile .. ' -H "Accept: image/png" ' .. drawio_url .. '/convert_file?scale={2.0}'
+    cmd = 'curl -s -d @' .. tmpfile .. ' -H "Accept: image/png" "' .. drawio_url .. '/convert_file?embed=true&scale={2.0}"'
   else
-    cmd = 'curl -s -d @' .. tmpfile .. ' -H "Accept: image/svg+xml; encoding=utf-8" ' .. drawio_url .. '/convert_file?scale={2.0}'
+    cmd = 'curl -s -d @' .. tmpfile .. ' -H "Accept: image/svg+xml; encoding=utf-8" "' .. drawio_url .. '/convert_file?scale={2.0}"'
   end
   -- os.execute(cmd .. ' --output /data/' .. string.sub(tmpfile,6) .. '.' .. filetype)
   handle=io.popen(cmd)
