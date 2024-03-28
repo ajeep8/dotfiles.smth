@@ -16,10 +16,10 @@ Win-m: 浮动模式
 Win-"-": 显示便签窗        Shift-Win-"-": 当前窗为便签窗
 
     Win-Alt    运行某个程序
-Win-Alt-e: Edge            Win-Alt-b: Browser 浏览器
-Win-Alt-f: Firefox         Win-Alt-h: Home 文件管理器
+Win-Alt-b: Browser 浏览器  Win-Alt-h: Home 文件管理器
 Win-Alt-l: Lock 锁屏       Win-Alt-m: Markdown编辑器
-Win-Alt-s: Setup           Win-Alt-c: Code(VScode)
+Win-Alt-a: arandr屏幕设置  Win-Alt-n: 网络配置
+Win-Alt-s: Setup 设置
 
 终端窗口内复制/粘贴：Shift-Ctrl-c/Shift-Ctrl-v
 其他应用程序复制/粘贴：Ctrl-c/Ctrl-v

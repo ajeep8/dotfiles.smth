@@ -1,5 +1,5 @@
-=========== bspwm 快捷键 =========================
-Win-Enter: 打开终端        Win-d: dmenu程序搜索
+=========== bspwm 快捷键 =============================
+Win-Enter: 打开终端        Win-空格: Ulauncher程序搜索
 Shift-Win-c: reConfig      Shift-Win-r: Restart bspwm
 Shift-Win-q: Quit关闭窗口  Win-Ctrl-Alt-e: Exit登出
 
@@ -13,10 +13,11 @@ Win-Alt-[1-9]：预设窗口比例 Win-Alt-方向键：预设窗口位置
 Win-Alt-Space：取消预设
 
     Win-Alt    运行某个程序
-Win-Alt-b: Browser 浏览器   Win-Alt-h: Home 文件管理器
+Win-Alt-b: Browser 浏览器  Win-Alt-h: Home 文件管理器
 Win-Alt-l: Lock 锁屏       Win-Alt-m: Markdown编辑器
 Win-Alt-a: arandr屏幕设置  Win-Alt-n: 网络配置
+Win-Alt-s: Setup 设置
 
 终端窗口内复制/粘贴：Shift-Ctrl-c/Shift-Ctrl-v
 其他应用程序复制/粘贴：Ctrl-c/Ctrl-v
-=================================================
+=====================================================
