@@ -123,6 +123,7 @@ super + 9
 	bspc desktop -f '^9'; feh --bg-fill --no-fehbg --geometry +1700+0 /usr/share/backgrounds/smth/th-3989x1080.svg
 super + 0
 	bspc desktop -f '^10'; feh --bg-fill --no-fehbg --randomize ~/Pictures/wallpaper/*
+	#bspc desktop -f '^10'; feh --bg-fill --no-fehbg --randomize ~/Pictures/wallpaper/*; wget -e "https_proxy=http://192.168.1.28:7890" -O ~/Pictures/wallpaper/`date +"%Y%m%d_%H%M%S"`.png https://source.unsplash.com/random/2560x1440?landscape
 	#bspc desktop -f '^8'; feh --bg-fill --no-fehbg https://source.unsplash.com/user/neom
 	#bspc desktop -f '^9'; feh --bg-fill --no-fehbg https://source.unsplash.com/random/2560x1440?forest
 	#bspc desktop -f '^10'; feh --bg-fill --no-fehbg https://source.unsplash.com/random/2560x1440?ocean
