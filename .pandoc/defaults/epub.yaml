@@ -22,8 +22,7 @@ highlight-style: tango
 
 metadata:
   # pandoc-crossref config
-  stylesheet: ${.}/epub.css
-  #stylesheet: /.pandoc/epub.css
+  # stylesheet: default epub.css is in .pandoc/
   codeBlockCaptions: True
 
   figureTitle: "图-"
@@ -41,4 +40,4 @@ metadata:
   lolTitle: "代码目录"
 
 metadata-files:
-  - ${.}/common.yaml
+    - ${.}/common.yaml

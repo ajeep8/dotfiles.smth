@@ -1,5 +1,5 @@
 # verbosity: INFO
-reference-doc: ${.}/reference.docx
+# reference-doc: ${.}/reference.docx # default reference-doc is in .pandoc/
 
 toc: true
 toc-depth: 3

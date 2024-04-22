@@ -1,5 +1,5 @@
 # verbosity: INFO
-reference-doc: ${.}/reference.pptx
+#reference-doc: ${.}/reference.pptx # default reference.pptx is in .pandoc/
 
 extract-media: /tmp
 
