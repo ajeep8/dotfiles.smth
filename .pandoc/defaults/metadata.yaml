@@ -39,7 +39,7 @@ titlepage: yes
 titlepage-text-color: '000000'
 titlepage-rule-color: '360049'
 titlepage-rule-height: 0
-titlepage-background: /.pandoc/templates/background3.pdf
+titlepage-background: /.pandoc/templates/img/background3.pdf
 CJKmainfont: SourceHanSerifCN-Medium
 
 figureTitle: "图"

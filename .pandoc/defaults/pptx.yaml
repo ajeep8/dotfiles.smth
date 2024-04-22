@@ -4,7 +4,9 @@ reference-doc: ${.}/reference.pptx
 extract-media: /tmp
 
 filters:
-  - pandoc-csv2table
+  #- pandoc-csv2table
+  #- pandocOne/includefiles.lua
+  - pandocOne/remark.lua
   - pandocOne/include-code-files.lua
   - pandocOne/diagram-generator.lua
     # - mermaid-filter
@@ -17,3 +19,5 @@ metadata:
   listings: true
   listings-disable-line-numbers: true
 
+metadata-files:
+  - ${.}/common.yaml

@@ -8,6 +8,7 @@ extract-media: /tmp
 
 filters:
   - pandocOne/include-files.lua
+  - pandocOne/remark.lua
   - pandocOne/include-code-files.lua
     #- pandoc-csv2table
     # - pandocker/csv2table.lua
@@ -26,15 +27,17 @@ metadata:
   # pandoc-crossref config
   codeBlockCaptions: True
 
-  figureTitle: "图-"
-  tableTitle: "表-"
-  listingTitle: "代码-"
-  figPrefix: "图-"
-  tblPrefix: "表-"
-  lstPrefix: "代码-"
+  figureTitle: "图"
+  tableTitle: "表"
+  listingTitle: "代码"
+    #chapDelim: "-"
+    #titleDelim: ""
+  figPrefix: "图"
+  tblPrefix: "表"
+  lstPrefix: "代码"
 
-  eqnPrefix: "公式-"
-  secPrefix: "章节-"
+  eqnPrefix: "公式"
+  secPrefix: "章节"
 
   lofTitle: "图片目录"
   lotTitle: "表格目录"

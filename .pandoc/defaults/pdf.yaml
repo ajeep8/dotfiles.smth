@@ -11,15 +11,17 @@ columns: 10
 
 filters:
   - pandocOne/include-files.lua
+  - pandocOne/remark.lua
     #  - pandoc-include
   - pandocOne/include-code-files.lua
-  - pandoc-csv2table
+    #- pandoc-csv2table
     #- pandocker/csv2table.lua
   - pandocOne/meta-vars.lua
   - pandocOne/diagram-generator.lua
   - lua-filters/pagebreak.lua
     #  - mermaid-filter
   - lua-filters/latex-div.lua
+    #- lua-filters/section-refs.lua
   - pandoc-latex-environment
   - pandoc-crossref
     #  - panda.lua

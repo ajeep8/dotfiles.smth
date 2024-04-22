@@ -8,7 +8,7 @@ extract-media: /tmp
 filters:
   - pandocOne/include-files.lua
   - pandocOne/include-code-files.lua
-  - pandoc-csv2table
+    #- pandoc-csv2table
   - pandocOne/meta-vars.lua
   - pandocOne/diagram-generator.lua
   - lua-filters/pagebreak.lua
@@ -23,6 +23,7 @@ highlight-style: tango
 metadata:
   # pandoc-crossref config
   stylesheet: ${.}/epub.css
+  #stylesheet: /.pandoc/epub.css
   codeBlockCaptions: True
 
   figureTitle: "图-"

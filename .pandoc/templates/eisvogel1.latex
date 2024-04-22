@@ -561,6 +561,8 @@ $endif$
   % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
+  \PolyglossiaSetup{english}{indentfirst=true}
+  \PolyglossiaSetup{chinese}{indentfirst=true}
 $for(polyglossia-otherlangs)$
   \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
 $endfor$
@@ -928,7 +930,7 @@ $else$
 $if(titlepage)$
 \begin{titlepage}
 $if(titlepage-background)$
-\newgeometry{top=2cm, right=4cm, bottom=3cm, left=4cm}
+\newgeometry{top=2cm, right=4cm, bottom=3cm, left=2cm}
 $else$
 \newgeometry{left=6cm}
 $endif$
@@ -937,7 +939,7 @@ $if(titlepage-color)$
 \newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
 $endif$
 $if(titlepage-background)$
-\tikz[remember picture,overlay] \node[inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{$titlepage-background$}};
+\tikz[remember picture,overlay] \node[inner sep=0pt, anchor=north] at (current page.north){\includegraphics[width=\paperwidth,height=\paperheight]{$titlepage-background$}};
 $endif$
 \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
 \begin{flushleft}
@@ -952,15 +954,15 @@ $if(titlepage-background)$
 % The titlepage with a background image has other text spacing and text size
 {
   \setstretch{2}
-  \vfill
-  \vskip -8em
+  \vspace{13cm}
+  \vskip 1em
   \noindent {\huge \textbf{\textsf{$title$}}}
   $if(subtitle)$
   \vskip 1em
   {\Large \textsf{$subtitle$}}
   $endif$
-  \vskip 2em
-  \noindent {\Large \textsf{$for(author)$$author$$sep$, $endfor$} \vskip 0.6em \textsf{$date$}}
+  \vskip 1em
+  \noindent {\Large \textsf{$for(author)$$author$$sep$, $endfor$} \vskip 0.1em \textsf{$date$}}
   \vfill
 }
 $else$
@@ -980,7 +982,7 @@ $endif$
 
 $if(logo)$
 \noindent
-\includegraphics[width=$if(logo-width)$$logo-width$$else$35mm$endif$, left]{$logo$}
+\includegraphics[width=$if(logo-width)$$logo-width$$else$35mm$endif$, right]{$logo$}
 $endif$
 
 $if(titlepage-background)$
@@ -1059,6 +1061,7 @@ $endif$
 $if(has-frontmatter)$
 \mainmatter
 $endif$
+\setlength\parindent{1.65em}
 $body$
 
 $if(has-frontmatter)$

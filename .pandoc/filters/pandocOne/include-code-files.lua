@@ -14,7 +14,7 @@ local function transclude (cb)
     local curl_path = os.getenv("CURL") or "curl"
     local tmpfile = os.tmpname()
     local fn=cb.attributes.include
-    if fn == "code" then
+    if string.sub(fn,-4) == "code" then
       for line in cb.text:gmatch('[^\n]+') do
         if line:sub(1,2) ~= '//' then
           fn = line

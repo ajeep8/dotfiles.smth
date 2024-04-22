@@ -44,8 +44,17 @@ local function update_contents(blocks, shift_by, include_path)
     -- Update path for include-code-files.lua filter style CodeBlocks
     CodeBlock = function (cb)
       if cb.attributes.include and (string.sub(cb.attributes.include,1,7) ~= "http://") and (string.sub(cb.attributes.include,1,8) ~= "https://") and path.is_relative(cb.attributes.include) then
-        cb.attributes.include =
-          path.normalize(path.join({include_path, cb.attributes.include}))
+        local fn=cb.attributes.include
+        if string.sub(fn,-4) == "code" then
+          for line in cb.text:gmatch('[^\n]+') do
+            if line:sub(1,2) ~= '//' then
+              fn = line
+              break
+            end
+          end
+        end
+
+        cb.attributes.include = path.normalize(path.join({include_path, fn}))
       end
       return cb
     end
