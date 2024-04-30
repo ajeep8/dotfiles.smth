@@ -53,7 +53,9 @@ echo 'Table Style: 表格使用Table Grid样式，表格内容使用Table Conten
 dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head" -c 12
 
 echo 'Fig/Table Caption: 将pandoc的交叉引用改为word的交叉引用, 如无需章节号则不要-c'
-dp /python/CapFigTable.py -c $tgt -o $tgt.docx; mv $tgt.docx $tgt
+dp /python/CapFigTable.py -c $tgt -o $tgt.docx; mv $tgt.docx $tgt  # 使用 图2-1、表3-2 这样的格式，无论是否需要引用。需使用图表不自动编号的ref-noNum.docx
+#dp /python/CapFigTable.py $tgt -o $tgt.docx; mv $tgt.docx $tgt    # 使用 图2、表10 这样的格式，但需要引用。需使用图表不自动编号的ref-noNum.docx
+# 如果使用 图2、表10 这样的格式，且无需引用，则使用pandoc-docx.sh，且使用图表自动编号的ref.docx。
 
 echo 'Figure Style: 图片居中，图标题小四(12)'
 dp /python/FigureStyle.py $tgt -o $tgt -s "Captioned Figure" -a c -c 12
