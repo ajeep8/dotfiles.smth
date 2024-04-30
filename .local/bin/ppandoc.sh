@@ -43,8 +43,8 @@ sed -i 's/<img src="\(media\/image[0-9]*\.[a-zA-Z]*\)" style="width:\([0-9\.]*in
 sed -i 's/<img src="\(media\/image[0-9]*\.[a-zA-Z]*\)" style="width:\([0-9\.]*in\);height:\([0-9\.]*in\)" \/>/![](\1){width="\2" height="\3"}/g' $t
 
 # 净化表格
-sed -i 's/| *--* *|/| -- |/g' $t
-sed -i 's/| *----* *|/| -- |/g' $t
+#sed -i 's/| *--* *|/| -- |/g' $t
+#sed -i 's/| *----* *|/| -- |/g' $t
 sed -i 's/| */| /g' $t
 sed -i 's/  *|/ |/g' $t
 sed -i 's/表格-[0-9]\+ */Table: /' $t  
