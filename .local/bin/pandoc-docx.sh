@@ -11,7 +11,6 @@ if  [ $# -lt 3 ]; then
     exit 1
 fi
 
-img="pandocone:docx"
 img="ajeep/pandocone:v3.1.11_p"
 
 num=$#
@@ -34,7 +33,7 @@ docker run -it --rm -v $tmpdir:/data \
 	-e mermaid_url=http://192.168.100.199:8170 -e plantuml_url=http://192.168.100.199:8180 -e drawio_url=http://192.168.100.199:8166 -e py2img_url=http://192.168.100.199:8190 \
 	$img -d docx --no-check-certificate \
 	$@ 
-        #-e https_proxy=http://10.222.1.1:7890 \
+        #-e https_proxy=http://192.168.100.199:7890 \
 
 return_code=$?
 if [ $return_code -ne 0 ]; then
@@ -49,17 +48,23 @@ dp() {
 echo 'lstStyle：列表应用样式“列表”“列表2"..."列表5"'
 dp /python/lstStyle.py $tgt -o $tgt
 
-echo 'Table Style: 表格使用Table Grid样式，表格内容和台头都使用Table Content样式，表标题小四(12)'
-dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Content" -c 12
+echo 'Table Style: 表格使用Table Grid样式，表格内容使用Table Content样式，台头使用Table Head，表标题小四(12)'
+dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head" -c 12
 
 echo 'Figure Style: 图片居中，图标题小四(12)'
 dp /python/FigureStyle.py $tgt -o $tgt -s "Captioned Figure" -a c -c 12
 
+if [ -f "ref-tables.docx" ]; then
+  # 源docx临时(被替换)表格的格式要求：表标题为："Replace: 实际表标题"，后面的表格左上角格内容为"Replace"
+  # ref-tables.docx严格为：从第一行开始，实际表标题1、复杂表格1、空行、实际表标题2、复杂表格2、空行...，空行不能没有也不能多，最前面也不能有空行。
+  echo '替换复杂表格'
+  dp /python/ReplaceTable.py $tgt ref-tables.docx $tgt
+fi
+
 if [ -f "ref-cover.docx" ]; then
   echo '增加封面'
-  docker run -it --rm -v $tmpdir:/data --entrypoint /bin/sh $img /bin/addcover.sh $tgt 4 $tgt /data/ref-cover.docx
+  dp /bin/addcover.sh $tgt 4 $tgt /data/ref-cover.docx
+  #docker run -it --rm -u `id -u` -v $tmpdir:/data --entrypoint /bin/sh $img /bin/addcover.sh $tgt 4 $tgt /data/ref-cover.docx
 fi
 
 #cp $tmpdir/$tgt .
-
-#  docker run -it --rm -v $(pwd):/data  --entrypoint="/usr/local/bin/python" ajeep/pandocone:v3.1.2_p /python/show-docxstyle.py kg-build.docx
