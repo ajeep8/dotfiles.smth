@@ -14,7 +14,12 @@ if [[ $# -lt 3 ]] ; then
     echo 'Usage: addRef.sh the.md Fig Tbl    # add {#fig:Figxxx},{#tbl:Tblxxx}'
     echo "Usage: addRef.sh -r the.md    # remove {#fig:Figxxx},{#tbl:Tblxxx}"
     echo "But if you had refered any of them, the id may change whan re-auto-add next time."
-    exit 1
+    exit 0
+fi
+
+if [ ! -f "$1" ]; then
+   echo $1 not exist
+   exit 0
 fi
 
 tmp1=$(mktemp)
