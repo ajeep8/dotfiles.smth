@@ -213,9 +213,12 @@ local function drawio(code, filetype)
   f:close()
 
   if filetype == 'png' then
-    cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/png" "' .. drawio_url .. '/convert_file?embed=true&scale={2.0}"'
+    -- cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/png" "' .. drawio_url .. '/convert_file?embed=true&scale={2.0}"' -- work in main linux shell, but not work in docker
+    -- cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/png" ' .. drawio_url .. '/convert_file?embed=true&scale={2.0}'  -- not work in main linux shell
+    cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/png" ' .. drawio_url .. '/convert_file?scale={2.0}'
   else
-    cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/svg+xml; encoding=utf-8" "' .. drawio_url .. '/convert_file?scale={2.0}"'
+    -- cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/svg+xml; encoding=utf-8" "' .. drawio_url .. '/convert_file?scale={2.0}"' -- should be not work
+    cmd = "curl -s --noproxy '*' -d @" .. tmpfile .. ' -H "Accept: image/svg+xml; encoding=utf-8" ' .. drawio_url .. '/convert_file?scale={2.0}'
   end
   -- os.execute(cmd .. ' --output /data/' .. string.sub(tmpfile,6) .. '.' .. filetype)
   print(cmd)
