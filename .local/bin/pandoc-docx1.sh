@@ -43,14 +43,15 @@ if [ $return_code -ne 0 ]; then
 fi
 
 dp() {
-  docker run -it --rm -u $(id -u) -v $tmpdir:/data --entrypoint "" $img python "$@"
+  docker run -it --rm -u $(id -u) -v $tmpdir:/data -v $HOME/.pandoc/python:/python --entrypoint "" $img python "$@"
 }
 
 echo 'lstStyle：列表应用样式“列表”“列表2"..."列表5"'
 dp /python/lstStyle.py $tgt -o $tgt
 
 echo 'Table Style: 表格使用Table Grid样式，表格内容使用Table Content样式，台头使用Table Head，表标题小四(12)'
-dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head" -c 12
+#dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head" -c 12
+dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head"
 
 echo 'Fig/Table Caption: 将pandoc的交叉引用改为word的交叉引用, 如无需章节号则不要-c'
 dp /python/CapFigTable.py -c $tgt -o $tgt.docx; mv $tgt.docx $tgt  # 使用 图2-1、表3-2 这样的格式，无论是否需要引用。需使用图表不自动编号的ref-noNum.docx

@@ -131,10 +131,10 @@ fi
 
 set -o ignoreeof
 
-export drawio_url=http://192.168.1.28:8166
-export mermaid_url=http://192.168.1.28:8170
-export plantuml_url=http://192.168.1.28:8180
-export py2img_url=http://192.168.1.28:8190
+export drawio_url=http://192.168.100.199:8166
+export mermaid_url=http://192.168.100.199:8170
+export plantuml_url=http://192.168.100.199:8180
+export py2img_url=http://192.168.100.199:8190
 
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/texlive/2024/bin/x86_64-linux
 export MANPATH=$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man

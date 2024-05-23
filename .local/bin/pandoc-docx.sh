@@ -49,10 +49,12 @@ echo 'lstStyle：列表应用样式“列表”“列表2"..."列表5"'
 dp /python/lstStyle.py $tgt -o $tgt
 
 echo 'Table Style: 表格使用Table Grid样式，表格内容使用Table Content样式，台头使用Table Head，表标题小四(12)'
-dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head" -c 12
+#dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head" -c 12
+dp /python/TableStyle.py $tgt -o $tgt -s "Table Grid" -b "Table Content" -t "Table Head"
 
 echo 'Figure Style: 图片居中，图标题小四(12)'
-dp /python/FigureStyle.py $tgt -o $tgt -s "Captioned Figure" -a c -c 12
+#dp /python/FigureStyle.py $tgt -o $tgt -s "Captioned Figure" -a c -c 12
+dp /python/FigureStyle.py $tgt -o $tgt -s "Captioned Figure" -a c
 
 if [ -f "ref-tables.docx" ]; then
   # 源docx临时(被替换)表格的格式要求：表标题为："Replace: 实际表标题"，后面的表格左上角格内容为"Replace"
