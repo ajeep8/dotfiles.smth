@@ -14,14 +14,14 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Wrapper-2.0 monitor=primary follow=on state=floating border=off rectangle=500x800+0+0
-bspc rule -a Skypeforlinux desktop='^9' follow=on
-bspc rule -a Gimp desktop='^8' follow=on
-bspc rule -a wpp desktop='^7' follow=on
-#bspc rule -a firefox desktop='^6' follow=on
-#bspc rule -a Google-chrome desktop='^5' follow=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+#bspc rule -a Skypeforlinux desktop='^9' follow=on
+#bspc rule -a Gimp desktop='^8' follow=on
+#bspc rule -a wpp desktop='^7' follow=on
+#bspc rule -a firefox desktop='^6' follow=on
+#bspc rule -a Google-chrome desktop='^5' follow=on
 
 kill -9 $(pidof appmenu-registrar)
 #xrandr -s 1280x960
