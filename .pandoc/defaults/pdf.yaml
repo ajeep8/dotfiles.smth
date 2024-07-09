@@ -1,6 +1,6 @@
 # verbosity: INFO
 pdf-engine: xelatex
-template: eisvogel  # default templates is in .pandoc/templates/
+template: eisvogel  # default= --template=xxx.latex (in .pandoc/templates/)
 
 toc: true
 toc-depth: 3

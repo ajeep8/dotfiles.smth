@@ -22,7 +22,7 @@ highlight-style: tango
 
 metadata:
   # pandoc-crossref config
-  # stylesheet: default epub.css is in .pandoc/
+  # stylesheet: default =  --css=epub.css (in .pandoc/)
   codeBlockCaptions: True
 
   figureTitle: "图-"
