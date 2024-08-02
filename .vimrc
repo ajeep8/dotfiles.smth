@@ -1,4 +1,4 @@
-set virtualedit=all
+"set virtualedit=all
 
 call plug#begin()
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -13,6 +13,9 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+
+nnoremap <leader>a i\begin{aligned}<CR><CR>\end{aligned}<Esc>ko
+inoremap <leader>a \begin{aligned}<CR><CR>\end{aligned}<Esc>ko
 
 windo set wrap
 
