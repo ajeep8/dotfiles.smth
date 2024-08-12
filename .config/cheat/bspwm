@@ -1,6 +1,6 @@
 =========== bspwm 快捷键 =============================
 Win-Enter: 打开终端        Win-空格: Ulauncher程序搜索
-Shift-Win-c: reConfig      Shift-Win-r: Restart bspwm
+Shift-Win-c: 重加载sxhkd   Shift-Win-r: 重启bspwm
 Shift-Win-q: Quit关闭窗口  Win-Ctrl-Alt-e: Exit登出
 
 Ctrl-空格: 切换输入法      Shift: 切换中英文
