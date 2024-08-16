@@ -30,4 +30,4 @@ BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.800000
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 FontName=DejaVu Sans Mono, Noto Serif CJK SC Regular 12
-
+ScrollingLines=3000
