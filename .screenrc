@@ -1,0 +1,8 @@
+# 设置鼠标滚轮行为为滚动屏幕
+#termcapinfo xterm ti@:te@
+#mousetrack on
+mouse on
+termcapinfo xterm* ti@:te@
+defscrollback 10000
+
+
