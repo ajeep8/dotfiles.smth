@@ -5,7 +5,7 @@ extract-media: /tmp
 
 filters:
   #- pandoc-csv2table
-  #- pandocOne/includefiles.lua
+  - pandocOne/include-files.lua
   - pandocOne/remark.lua
   - pandocOne/include-code-files.lua
   - pandocOne/diagram-generator.lua
