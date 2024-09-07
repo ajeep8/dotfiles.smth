@@ -1,7 +1,5 @@
 # verbosity: INFO
 
-toc: true
-toc-depth: 3
 # number-sections: true # In docx, this conflict with docx template section auto-number
 extract-media: /tmp
 
