@@ -3,5 +3,6 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o > '
 alias pbpastei='xclip -selection clibboard -t image/png -o > '
 alias scpr='rsync -avP -e "ssh -p 22" '
-
-
+alias dp='docker run -it --rm -u $(id -u) -v $(pwd):/data --entrypoint "/bin/sh" ajeep/py2image:v0.0.1'
+alias dproot='docker run -it --rm -v $(pwd):/data --entrypoint "/bin/sh" ajeep/py2image:v0.0.1'
+alias ls='ls --time-style=+"%Y-%m-%d %H:%M:%S" --color=auto'
