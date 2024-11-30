@@ -1,10 +1,11 @@
+
 call plug#begin('~/.vim/plugged')
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " 代码自动完成，安装完插件还需要额外配置才可以使用
-"Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 
 " 安装 CoC 插件
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -41,11 +42,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 
 " markdown 插件
-Plug 'iamcco/mathjax-support-for-mkdp'
+"Plug 'iamcco/mathjax-support-for-mkdp'
 
 " 下面两个插件要配合使用，可以自动生成代码块
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " go 主要插件
 "Plug 'fatih/vim-go', { 'tag': '*' }
@@ -113,22 +114,10 @@ autocmd FileType yaml setlocal foldmethod=indent
 " 针对 Markdown 文件设置折叠规则
 autocmd FileType markdown setlocal foldmethod=expr
 autocmd FileType markdown setlocal foldexpr=MarkdownFold()
+" MarkdownFold() in /usr/local/share/vim/vim91/ftplugin/markdown.vim
 
 " 打开 Markdown 文件时，统一折叠到 2 级标题
-autocmd FileType markdown call Fold2(1)
-
-" 定义 Markdown 的折叠规则
-function! MarkdownFold()
-    let l:line = getline(v:lnum)
-
-    " 匹配标题层级
-    if l:line =~ '^#\+'
-        return '>' . len(matchstr(l:line, '^#\+'))
-    endif
-
-    " 非标题行保持与上层一致
-    return '='
-endfunction
+autocmd FileType markdown call Fold2(2)
 
 " 自定义函数：折叠到指定层级
 function! Fold2(level)
@@ -146,3 +135,6 @@ nnoremap z7 :call Fold2(7)<CR>
 nnoremap z8 :call Fold2(8)<CR>
 nnoremap z9 :call Fold2(9)<CR>
 
+let g:my_virtualenv = expand('~/py3env')
+let $http_proxy = 'http://127.0.0.1:7890'
+let $https_proxy = 'http://127.0.0.1:7890'
