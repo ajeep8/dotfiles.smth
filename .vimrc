@@ -1,11 +1,10 @@
-
 call plug#begin('~/.vim/plugged')
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " 代码自动完成，安装完插件还需要额外配置才可以使用
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 
 " 安装 CoC 插件
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,8 +44,8 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'iamcco/mathjax-support-for-mkdp'
 
 " 下面两个插件要配合使用，可以自动生成代码块
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
 " go 主要插件
 "Plug 'fatih/vim-go', { 'tag': '*' }
@@ -117,7 +116,7 @@ autocmd FileType markdown setlocal foldexpr=MarkdownFold()
 " MarkdownFold() in /usr/local/share/vim/vim91/ftplugin/markdown.vim
 
 " 打开 Markdown 文件时，统一折叠到 2 级标题
-autocmd FileType markdown call Fold2(2)
+"autocmd FileType markdown call Fold2(2)
 
 " 自定义函数：折叠到指定层级
 function! Fold2(level)
