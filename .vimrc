@@ -59,6 +59,8 @@ Plug 'airblade/vim-gitgutter'
 " 可以在 vim 中自动完成
 "Plug 'Shougo/neocomplete.vim'
 
+Plug 'dhruvasagar/vim-table-mode'
+
 " 插件结束的位置，插件全部放在此行上面
 call plug#end()
 
@@ -111,9 +113,12 @@ autocmd FileType python setlocal foldmethod=indent
 autocmd FileType yaml setlocal foldmethod=indent
 
 " 针对 Markdown 文件设置折叠规则
-autocmd FileType markdown setlocal foldmethod=expr
+"autocmd FileType markdown setlocal foldmethod=expr
 autocmd FileType markdown setlocal foldexpr=MarkdownFold()
 " MarkdownFold() in /usr/local/share/vim/vim91/ftplugin/markdown.vim
+
+nnoremap <leader>mf :setlocal foldmethod=expr<CR>
+nnoremap <leader>mm :setlocal foldmethod=manual<CR>
 
 " 打开 Markdown 文件时，统一折叠到 2 级标题
 "autocmd FileType markdown call Fold2(2)
@@ -134,6 +139,7 @@ nnoremap z7 :call Fold2(7)<CR>
 nnoremap z8 :call Fold2(8)<CR>
 nnoremap z9 :call Fold2(9)<CR>
 
-let g:my_virtualenv = expand('~/py3env')
+let mapleader = "\\"
+let g:my_virtualenv = expand('~/.venv')
 let $http_proxy = 'http://127.0.0.1:7890'
 let $https_proxy = 'http://127.0.0.1:7890'
