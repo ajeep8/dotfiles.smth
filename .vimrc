@@ -59,6 +59,7 @@ Plug 'airblade/vim-gitgutter'
 " 可以在 vim 中自动完成
 "Plug 'Shougo/neocomplete.vim'
 
+" 自动Table对齐，:TableModeToggle
 Plug 'dhruvasagar/vim-table-mode'
 
 " 插件结束的位置，插件全部放在此行上面
