@@ -103,3 +103,16 @@ body {
   /* for code block only */
 }
 
+/* Custom styles to prevent YAML front matter from being rendered as HR or H1 */
+#write .md-meta-block hr {
+    display: none;
+}
+
+#write .md-meta-block h1 {
+    font-size: inherit;
+    font-weight: normal;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
